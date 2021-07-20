@@ -10,7 +10,7 @@ Feature: Search feature
 	Scenario Outline: Testing ability to find transactions with given money amount
 		When I search for 'liftago'
 		And I set money amount to '<range1>' - '<range2>'
-		Then I should receive list of transactions in range '1 - 200'
+		Then I should receive list of transactions in range '<range1> - <range2>'
 
 		Examples:
 			| range1 | range2 |
