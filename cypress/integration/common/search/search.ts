@@ -1,11 +1,13 @@
 import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
 import actions from '../../../support/actions'
-import {login} from '../../../testData/login'
+import {login as loginData} from '../../../testData/login'
 import searchField from '../../featureObject/searchBar/searchField'
 import amountField from '../../featureObject/searchBar/amountField'
+import login from '../../featureObject/login'
 
 Given(/I am logged as a user '(.*)'/, (user: string) => {
-	actions.openURL(login.url)
+	actions.openURL(loginData.url);
+	login.clickLogin();
 })
 
 When(/I search for '(.*)'/, (textToSearch: string) => {
