@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run --spec **/*.features"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/naumowicz/cypress-test#readme",
   "devDependencies": {
+    "cypress": "^8.0.0",
     "cypress-cucumber-preprocessor": "^4.1.4",
-    "cypress": "^8.0.0"
+    "typescript": "^4.3.5"
   }
 }
