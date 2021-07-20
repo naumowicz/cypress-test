@@ -1,4 +1,4 @@
-import actions from '../../support/actions';
+import actions from '../support/actions';
 
 class Login {
 	loginButton = 'app-button';

@@ -1,4 +1,4 @@
-import actions from '../../../support/actions';
+import actions from '../../support/actions';
 
 class SearchField {
 	input = 'input#dropdown-nJBn-menu';
