@@ -1,5 +1,8 @@
 const login = {
-	url: 'https://george.csas.cz/?login_hint=7777777777'
+	url: 'https://bezpecnost.csas.cz/login/?client_id=georgeclient_cz',
+	//should be encrypted:
+	login: '7777777777',
+	pass: '123456'
 }
 
 export {login}
