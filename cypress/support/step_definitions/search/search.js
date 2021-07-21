@@ -4,6 +4,8 @@ import {login as loginData} from '../../../testData/login'
 import searchField from '../../../featureObject/searchBar/searchField'
 import amountField from '../../../featureObject/searchBar/amountField'
 import login from '../../../featureObject/login'
+import transactionsDataList from '../../../testData/transactionsDataList';
+import transactionsList from '../../../featureObject/transactionsList'
 
 Given(/I am logged as a user '(.*)'/, (user) => {
 	actions.openURL(loginData.url);
@@ -22,4 +24,9 @@ When(/I set money amount to '(.*)' - '(.*)'/, (range1, range2) => {
 
 Then(/I should receive list of transactions in range '(.*)'/, (range) => {
 	const [range1, range2] = range.split(' - ');
+})
+Then(/I should receive list of transactions related to '(.*)'/, (transactions) => {
+	searchField.search();
+	const {list} = transactionsDataList[transactions]
+	transactionsList.verifyList(list)
 })
