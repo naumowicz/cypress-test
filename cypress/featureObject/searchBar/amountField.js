@@ -8,8 +8,12 @@ class amoutField {
 	
 	setAmountRange(range1, range2) {
 		actions.click(this.button);
+		//!FIXME: not working because UI is moving during typing
+		cy.pause()
 		actions.type(this.from, range1);
+		cy.wait(1000)
 		actions.type(this.to, range2);
+		cy.wait(1000)
 		actions.click(this.find);
 	}
 }
