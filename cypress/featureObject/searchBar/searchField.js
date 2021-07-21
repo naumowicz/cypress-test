@@ -1,7 +1,7 @@
 import actions from '../../support/actions';
 
 class SearchField {
-	input = 'input#dropdown-nJBn-menu';
+	input = '[data-cy="search-keyword"]';
 	
 	fill(text) {
 		actions.type(this.input, text);
