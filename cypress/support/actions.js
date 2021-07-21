@@ -24,7 +24,11 @@ class Actions {
 		if (typeof value === 'number') {
 			value = value.toString();
 		}
-		return this.evaluateSelector(selector).type(value);
+		return this.evaluateSelector(selector).should('not.be.disabled').type(value);
+	}
+
+	waitForDisplayed(selector, timeout) {
+		cy.get(selector, {timeout: timeout});
 	}
 }
 
