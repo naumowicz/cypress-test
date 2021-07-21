@@ -7,7 +7,10 @@ import login from '../../../featureObject/login'
 
 Given(/I am logged as a user '(.*)'/, (user) => {
 	actions.openURL(loginData.url);
-	login.clickLogin();
+	//TODO: fix
+	cy.wait(1500);
+	login.login(loginData.login, loginData.pass);
+	actions.waitForDisplayed('[alt="George Logo"]', 20000)
 })
 
 When(/I search for '(.*)'/, (textToSearch) => {
