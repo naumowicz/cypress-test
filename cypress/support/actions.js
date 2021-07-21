@@ -1,17 +1,17 @@
 class Actions {
-	openURL(url: string) {
+	openURL(url) {
 		cy.visit(url);
 	}
 
-	evaluateSelector(selector: string) {
+	evaluateSelector(selector) {
 		return cy.get(selector);
 	}
 
-	click(selector: string) {
+	click(selector) {
 		return this.evaluateSelector(selector).click();
 	}
 
-	getText(selector: string) {
+	getText(selector) {
 		const element = this.evaluateSelector(selector);
 		let receivedText = '';
 		element.invoke('text').then((text) => {
@@ -20,7 +20,7 @@ class Actions {
 		return [element, receivedText];
 	}
 
-	type(selector: string, value: string | number) {
+	type(selector, value) {
 		if (typeof value === 'number') {
 			value = value.toString();
 		}
